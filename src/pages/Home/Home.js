@@ -5,6 +5,10 @@ import { connect } from 'react-redux';
 /* Store imports */
 import { fetchBooks } from './../../store/actions/booksActions';
 
+/* Component imports */
+import NavigationBar from '../../components/NavigationBar/NavigationBar';
+import BooksList from '../../components/BooksList/BooksList';
+
 export class Home extends Component {
     componentDidMount() {
         this.props.fetchBooks();
@@ -14,7 +18,7 @@ export class Home extends Component {
         let element = <p>Loading...</p>;
         if(this.props.loadingComplete && !this.props.fetchFailed) {
             element = (
-                <p>Book</p>
+                <BooksList books={this.props.books} />
             )
         } else if(this.props.loadingComplete && this.props.fetchFailed) {
             element = (
@@ -24,7 +28,7 @@ export class Home extends Component {
 
         return (
             <div>
-                Home
+                <NavigationBar />
                 { element }
             </div>
         )
