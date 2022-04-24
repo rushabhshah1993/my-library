@@ -1,0 +1,22 @@
+.bookContainer {
+    margin: 0 1rem;
+    display: grid;
+    grid-template-columns: 23% 73%;
+    column-gap: 4%;
+
+    .content {
+        .section {
+            display: flex;
+            align-items: baseline;
+
+            .key {
+                margin-right: 8px;
+                color: #A9A9A9;
+            }
+
+            .value {
+                font-size: 1.5rem;
+            }
+        }
+    }
+}

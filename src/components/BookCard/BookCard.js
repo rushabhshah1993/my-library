@@ -1,12 +1,19 @@
 /* Package imports */
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 /* Style imports */
 import styles from './BookCard.scss';
 
 const BookCard = props => {
+    let navigate = useNavigate();
+
+    const bookClickHandler = id => {
+        navigate(`/book/${id}`);
+    }
+
     return (
-        <div className={styles.bookCard}>
+        <div className={styles.bookCard} onClick={() => bookClickHandler(props.book.id)}>
             <div className={styles.imgContainer}>
                 <img src={props.book.cover} className={styles.cover} />
             </div>
