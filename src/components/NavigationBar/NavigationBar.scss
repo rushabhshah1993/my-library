@@ -6,4 +6,22 @@
     align-items: center;
     padding: 8px 1rem;
     margin-bottom: 1rem;
+    color: white;
+
+    .navigation {
+        a {
+            text-decoration: none;
+            color: white;
+            margin-right: 1rem;
+
+            &:last-child {
+                margin: 0;
+            }
+        }
+
+        .active {
+            color: #198754;
+        }
+    }
+
 }

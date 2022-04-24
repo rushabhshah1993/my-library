@@ -10,7 +10,7 @@ import BookCard from './../BookCard/BookCard';
 const BooksList = props => {
     let element = props.books.map(book => {
         return (
-            <BookCard book={book} />
+            <BookCard book={book} key={book.id} />
         )
     });
 

@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 /* Store import */
 import store from './store/store';
+import { fetchBooks } from './store/actions/booksActions';
 
 /* Components imports */
 import Home from './pages/Home/Home';
@@ -14,6 +15,8 @@ import Book from './pages/Book/Book';
 
 /* Style imports */
 import './index.scss';
+
+store.dispatch(fetchBooks());
 
 ReactDOM.render(
     <Provider store={store}>

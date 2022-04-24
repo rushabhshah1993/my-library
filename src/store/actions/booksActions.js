@@ -9,7 +9,6 @@ export const fetchBooks = () => {
         dispatch(fetchBooksLoading());
         axios.get(`https://my-library-495db-default-rtdb.firebaseio.com/books.json`)
         .then(response => {
-            console.log("response:   ", response);
             dispatch(fetchBooksSuccess(response.data));
         })
         .catch(error => {

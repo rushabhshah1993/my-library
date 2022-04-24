@@ -10,9 +10,9 @@ import NavigationBar from '../../components/NavigationBar/NavigationBar';
 import BooksList from '../../components/BooksList/BooksList';
 
 export class Home extends Component {
-    componentDidMount() {
-        this.props.fetchBooks();
-    }
+    // componentDidMount() {
+    //     this.props.fetchBooks();
+    // }
 
     render() {
         let element = <p>Loading...</p>;
