@@ -7,13 +7,26 @@ import * as actions from './../action-types';
 export const fetchBooks = () => {
     return dispatch => {
         dispatch(fetchBooksLoading());
-        axios.get(`https://my-library-495db-default-rtdb.firebaseio.com/books.json`)
+        return axios.get(`https://my-library-495db-default-rtdb.firebaseio.com/books.json`)
         .then(response => {
             dispatch(fetchBooksSuccess(response.data));
         })
         .catch(error => {
-            console.log("error:   ", error);
+            console.log("Error in fetching books:   ", error);
             dispatch(fetchBooksError(error));
+        })
+    }
+}
+
+export const addBook = data => {
+    return dispatch => {
+        return axios.put(`https://my-library-495db-default-rtdb.firebaseio.com/books.json`, data)
+        .then(response => {
+            dispatch(fetchBooks());
+            return {success: true};
+        })
+        .catch(error => {
+            console.log("Error in adding book:    ", error);
         })
     }
 }

@@ -9,15 +9,18 @@ import styles from './Book.scss';
 import NavigationBar from './../../components/NavigationBar/NavigationBar';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 
+/* Utils imports */
+import { withNavigation } from './../../hocs';
 
-const withNavigation = Component => {
-    return props => <Component 
-        {...props} 
-        navigate={useNavigate()} 
-        location={useLocation()}
-        params={useParams()} 
-    />
-}
+
+// const withNavigation = Component => {
+//     return props => <Component 
+//         {...props} 
+//         navigate={useNavigate()} 
+//         location={useLocation()}
+//         params={useParams()} 
+//     />
+// }
 export class Book extends Component {
     render() {
         let book = this.props.books.find(book => book.id === this.props.params.id);
